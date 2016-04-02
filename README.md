@@ -1,8 +1,7 @@
 #HW4 Sorted Doubly Linked List 
 
-#First-Name Last-Name
+#Amanda Robinson
 
-TODO - Update your name in this readme.
 
 TODO - Add a badge from travis CI here
 
