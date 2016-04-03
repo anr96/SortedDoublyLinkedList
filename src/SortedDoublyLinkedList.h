@@ -149,18 +149,24 @@ bool SortedDoublyLinkedList<ItemType>::add(const ItemType &newEntry) { //sorted 
 
 template<class ItemType>
 bool SortedDoublyLinkedList<ItemType>::remove(const ItemType &anEntry) {
-    Node<ItemType> *entryRemPtr = getPointerTo(anEntry);
-    bool removable = !isEmpty() && (entryRemPtr != nullptr);
+    Node<ItemType> *entryRemovePtr = getPointerTo(anEntry);
+    bool removable = !isEmpty() && (entryRemovePtr != nullptr); //make sure there is something to be removed
     if (removable) {
-        entryRemPtr->setItem(head->getItem()); //the found node will get the data from the first node
-
-
-        Node<ItemType> *delPtr = head;//getting rid of the first node
-        head = head->getNext();
-
-        delPtr->setNext(nullptr);
-        delete delPtr;
-        delPtr = nullptr;
+        if(entryRemovePtr == head){
+            head = head->getNext();
+        }
+        else if(entryRemovePtr == tail){
+            tail = tail->getPrev();
+        }
+        else{
+            if(entryRemovePtr->getNext()){
+                entryRemovePtr->getNext()->setPrev(entryRemovePtr->getPrev());
+            }
+            if(entryRemovePtr->getPrev()){
+                entryRemovePtr->getPrev()->setNext(entryRemovePtr->getNext());
+            }
+        }
+        delete entryRemovePtr;
 
         size--; //decrease amount of items in the list
     }
