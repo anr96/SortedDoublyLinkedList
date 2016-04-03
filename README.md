@@ -2,8 +2,7 @@
 
 #Amanda Robinson
 
-
-TODO - Add a badge from travis CI here
+[![Build Status](https://travis-ci.com/csc340-03-spring-2016/csc340-03-hw4-anr96.svg?token=sqKHHUsKkyZTggTth4Mt&branch=master)](https://travis-ci.com/csc340-03-spring-2016/csc340-03-hw4-anr96)
 
 ##Problem statement:
 Implement a backend for a Class that represents a Sorted Doubly Linked List(Ascending order). 
